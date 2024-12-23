@@ -4,5 +4,5 @@ const array1 = [
     "C",
 ]
 
-const newarray1 = array1.map(array => "★ " + array )
+const newarray1 = array1.map(array => "★" + array )
 console.log(newarray1)
