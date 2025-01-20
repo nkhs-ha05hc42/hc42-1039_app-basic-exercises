@@ -1,7 +1,6 @@
 const promiseSetTimeout = (timeout) =>
     new Promise((resolve, reject) => {
     setTimeout(() => {
-    // この例では処理が完了したことを返すだけなのでresolveには値を渡さない
     resolve()
     }, timeout)
     })
