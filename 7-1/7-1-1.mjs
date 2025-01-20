@@ -3,5 +3,5 @@ const calc71 = (A1) => {
     return A1
 }
 
-const result = calc71("ABC")
+const result = calc71(15)
 console.log(result)
