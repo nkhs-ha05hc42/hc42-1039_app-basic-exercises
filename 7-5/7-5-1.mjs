@@ -17,6 +17,6 @@ const promise751 = () => {
     return promiseSetTimeout(5000)
     })
    }
-   console.log("start", new Date())
-   promise751()
-   console.log("end", new Date())
+console.log("start", new Date())
+promise751()
+console.log("end", new Date())
