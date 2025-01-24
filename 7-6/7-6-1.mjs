@@ -14,6 +14,8 @@ const 呼び出し元の関数 = async () => {
    const promiseB = async () => {
     await promiseSetTimeout(20000)
     console.log("◆", new Date())
+    await promiseSetTimeout(2000)
+    
    }
    console.log("start", new Date())
    promiseA()
