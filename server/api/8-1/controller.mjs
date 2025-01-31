@@ -7,6 +7,12 @@ const get811 = (req, res) => {
     )
 }
 
+const post812 = (req, res) => {
+    console.log(req.body)
+    res.send(JSON.stringify({ status: "OK" }))
+}
+
 export const q8_1Controller = {
     get811,
+    post812,
 }
