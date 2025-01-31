@@ -17,8 +17,13 @@ const put813 = (req, res) => {
     res.send(JSON.stringify({ status: "OK" }))
 }
 
+const delete814 = (req, res) => {
+    res.send(JSON.stringify({ status: "OK", code: req.query.code }))
+}
+
 export const q8_1Controller = {
     get811,
     post812,
     put813,
+    delete814,
 }
