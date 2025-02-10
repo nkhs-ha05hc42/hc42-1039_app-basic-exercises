@@ -70,8 +70,26 @@ const put823 = async (req, res) => {
     }
 }
 
+const delete824 = async (req, res) => {
+    const code1  = "HC42-9824"
+    const code = req.query.code
+    if (code !== code1) {
+        return res.send(JSON.stringify({
+            status: "error",
+            code: code,
+            cause: "not found code!",
+        }))
+    }else{
+        res.send(JSON.stringify({
+            status: "OK",
+            code: code,
+        }))
+    }
+}
+
 export const q8_2Controller = {
     get821,
     post822,
     put823,
+    delete824,
 }
