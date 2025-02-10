@@ -41,7 +41,37 @@ const post822 = async (req, res) => {
         )
     }
 }
+
+const put823 = async (req, res) => {
+    const code1 = "HC42-9823"
+    const pcode = "059-0036"
+    const adres = "北海道登別市美園町"
+    const code = req.body.code
+    const postcode = req.body.postcode
+    const address = req.body.address
+    if (code1 !== code) {
+        return res.send(JSON.stringify({
+        status: "error",
+        code: code,
+        cause: "not found code!",
+        }))
+    }else{
+        console.log("code", code1)
+        if(postcode !== pcode){
+            console.log("postcode", postcode)
+        }
+        if(address !== adres){
+            console.log("address", address)
+        }
+        return res.send(JSON.stringify({
+            status: "OK",
+            code: code,
+        }))
+    }
+}
+
 export const q8_2Controller = {
     get821,
     post822,
+    put823,
 }
