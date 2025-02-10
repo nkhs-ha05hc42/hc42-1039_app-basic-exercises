@@ -23,7 +23,9 @@ routers.post("/api/8-1", q8_1Controller.post812)
 routers.put("/api/8-1", q8_1Controller.put813)
 routers.delete("/api/8-1", q8_1Controller.delete814)
 routers.get("/api/8-2", q8_2Controller.get821)
+routers.post("/api/8-2", q8_2Controller.post822)
 routers.get("/api/9-7", q9_7Controller.get971)
+routers.get("/api/9-7", q9_7Controller.get972)
 
 // client配下は、ブラウザサイドで実行されるファイル（HTML/JS/CSS/画像など）を配置する
 routers.use(express.static(`${path.resolve()}/client`))
