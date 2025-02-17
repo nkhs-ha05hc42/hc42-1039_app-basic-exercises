@@ -27,7 +27,7 @@ const post973 = async (req, res) => {
     if (!user_id || !year || !month || !day || !name || !score) {
         return res.send(JSON.stringify({ status: "error" }))
     }
-    const result = await q9_7Model.insertOne(user_id, year, month, day, name, score)
+    const result = await (q9_7Model.insert97(user_id, year, month, day, name, score))
     res.send(JSON.stringify({ status: "success", data: result }))
 }
 
