@@ -1,7 +1,8 @@
 import { query } from "../../db/manager.mjs"
-const insert97 = async (user_id, year, month, day, name, score) => {
+const insert97 = async (id, user_id, year, month, day, name, score) => {
     const insertQuery = `
     INSERT INTO exams(
+    id,
     user_id,
     year,
     month,
@@ -15,11 +16,12 @@ const insert97 = async (user_id, year, month, day, name, score) => {
     $3,
     $4,
     $5,
-    $6
+    $6,
+    $7
     )
     RETURNING *;
     `
-    const result = await query(insertQuery, [user_id, year, month, day, name, score])
+    const result = await query(insertQuery, [id, user_id, year, month, day, name, score])
     return result.rows.at(0)
 }
 
@@ -33,7 +35,21 @@ const selectAll = async () => {
     return results.rows
 }
 
+const selectOne = async (id) => {
+    const selectQuery = `
+    SELECT
+    *
+    FROM
+    exams
+    WHERE
+    id = $1;
+    `
+    const results = await query(selectQuery, [id])
+    return results.rows.at(0)
+}
+
 export const q9_7Model = {
     insert97,
     selectAll,
+    selectOne,
 }
