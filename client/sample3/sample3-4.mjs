@@ -98,4 +98,3 @@ const getRecord = async (targetId) => {
         false,
     )
 }
-            
