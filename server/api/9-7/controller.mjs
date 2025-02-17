@@ -49,9 +49,22 @@ const put974 = async (req, res) => {
     res.send(JSON.stringify({ status: "success", data: result }))
 }
 
+const delete975 = async (req, res) => {
+    const id = req.params.id
+    if (!id) {
+    return res.send(JSON.stringify({ status: "error" }))
+    }
+    const result = await q9_7Model.deleteOne(id)
+    if (!result) {
+    return res.send(JSON.stringify({ status: "not found" }))
+    }
+    res.send(JSON.stringify({ status: "success", data: result }))
+}
+
 export const q9_7Controller = {
     get971,
     get972,
     post973,
     put974,
+    delete975,
 }

@@ -65,9 +65,22 @@ const updateOne = async (id, user_id, year, month, day, name, score) => {
     return result.rows.at(0)
 }
 
+const deleteOne = async (id) => {
+    const deleteQuery = `
+    DELETE FROM
+    exams
+    WHERE
+    id = $1
+    RETURNING *;
+    `
+    const result = await query(deleteQuery, [id])
+    return result.rows.at(0)
+}
+
 export const q9_7Model = {
     insert97,
     selectAll,
     selectOne,
     updateOne,
+    deleteOne,
 }
