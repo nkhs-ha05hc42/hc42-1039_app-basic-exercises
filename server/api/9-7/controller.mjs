@@ -31,8 +31,27 @@ const post973 = async (req, res) => {
     res.send(JSON.stringify({ status: "success", data: result }))
 }
 
+const put974 = async (req, res) => {
+    const id = req.params.id
+    const user_id = req.body.user_id
+    const year = req.body.year
+    const month = req.body.month
+    const day = req.body.day
+    const name = req.body.name
+    const score = req.body.score
+    if (!id || !user_id || !year || !month || !day || !name || !score) {
+    return res.send(JSON.stringify({ status: "error" }))
+    }
+    const result = await q9_7Model.updateOne(id, user_id, year, month, day, name, score)
+    if (!result) {
+    return res.send(JSON.stringify({ status: "not found" }))
+    }
+    res.send(JSON.stringify({ status: "success", data: result }))
+}
+
 export const q9_7Controller = {
     get971,
     get972,
     post973,
+    put974,
 }
